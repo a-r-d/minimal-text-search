@@ -20,31 +20,27 @@ function Store(config) {
     const cleaned = _config.selectSearchableFields(item);
     index.cleanedDocuments.push(cleaned);
 
-    const lowercase = {};
-    let combined = '';
-    let combinedLC = '';
-    Object.keys(cleaned).forEach((k) => {
-      lowercase[k] = safeLowerCase(cleaned[k]);
-      combined += cleaned[k] + '\n';
-      combinedLC += safeLowerCase(cleaned[k]) + '\n';
-    });
-    Object.defineProperty(lowercase, '_ref', {
-      enumerable: false,
-      value: cleaned._ref
-    });
-    Object.defineProperty(cleaned, '_combined', {
-      enumerable: false,
-      value: combined
-    });
-    Object.defineProperty(lowercase, '_combined', {
-      enumerable: false,
-      value: combinedLC
-    });
+    const lowercase = Object.assign({}, cleaned);
+    lowercase._combined = safeLowerCase(lowercase._combined);
+
     index.lowercase.push(lowercase);
   }
 
   const removeFromIndex = (itemKey) => {
-
+    let pos = -1;
+    for(let i = 0; i < index.rawDocuments.length; i++) {
+      if(index.rawDocuments[i][_config.ref] === itemKey) {
+        pos = i;
+        break;
+      }
+    }
+    if(pos >= 0) {
+      // these are all parallel arrays.
+      index.rawDocuments.splice(pos, 1);
+      index.lowercase.splice(pos, 1);
+      index.cleanedDocuments.splice(pos, 1);
+    }
+    return pos;
   }
 
   return {

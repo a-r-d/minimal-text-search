@@ -13,7 +13,6 @@ function MinimalTextSearch(documentConfig, optionalParams) {
     add: this._store.add,
     remove: this._store.remove,
     exactMatch: this._search.substring,
-    wordMatch: this._search.token
   };
 };
 

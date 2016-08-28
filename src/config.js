@@ -30,18 +30,17 @@ function Config(documentConfig, optionalParams = {}) {
 
   const fieldConfigResults = new FieldConfigurator(_documentConfig);
 
-  function selectSearchableFields(document) {
-    const cpy = {};
+  function selectSearchableFields(doc) {
+    let tmp = '';
+    // combine all of the fields
     fieldConfigResults.fields.forEach((f) => {
-      cpy[f] = document[f];
+      tmp += doc[f] + '\n';
     });
-
-    // ._ref should be non-enumerable so we dont accidentely transform or search on it.
-    Object.defineProperty(cpy, '_ref', {
-      enumerable: false,
-      value: document[fieldConfigResults.ref]
-    });
-    return cpy;
+    return {
+      _combined: tmp,
+      _document: doc,
+      _ref: doc[fieldConfigResults.ref]
+    };
   }
 
   return {

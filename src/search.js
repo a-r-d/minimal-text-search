@@ -21,23 +21,21 @@ function Search(config, store) {
       const res = RabinKarp(doc._combined, term);
       if(res.length > 0) {
         matches.push({
-          document: doc,
+          document: doc._document,
           hits: res.length,
           matches: res
         });
       }
     });
 
+    matches.sort((a, b) => {
+      return b.hits - a.hits;
+    });
     return matches;
   }
 
-  const tokenBasedSearch = (terms) => {
-    throw new Error('Not implemented');
-  }
-
   return {
-    substring: substringSearch,
-    token: tokenBasedSearch
+    substring: substringSearch
   };
 }
 
