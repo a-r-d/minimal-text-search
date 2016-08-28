@@ -17,4 +17,4 @@ function MinimalTextSearch(documentConfig, optionalParams) {
   };
 };
 
-export default MinimalTextSearch;
+module.exports = MinimalTextSearch;

@@ -6,6 +6,8 @@ This is a dependency free reverse index text search system that is meant to be s
 
 This is not meant to be a drop in replacement for Lunr.js, but I have tried to emulate their interfaces where possible.
 
+The only search capability that is currently implemented is exact substring match.
+
 
 ## How to Index:
 
@@ -41,9 +43,8 @@ search.add({
   id: 45600
 });
 
-const results = search.exactMatch('frank');  // 1 results
-const results2 = search.exactMatch('frank', { restriction: { name: false }}); // 0 results
-const results3 = search.exactMatch('frank', { caseSensitive: true });  // 0 results
+const results1 = search.exactMatch('frank');  // 1 results
+const results2 = search.exactMatch('frank', { caseSensitive: true });  // 0 results
 
 
 ```
