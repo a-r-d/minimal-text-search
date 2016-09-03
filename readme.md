@@ -2,6 +2,12 @@
 
 This is a dependency free text substring search system that is meant to be small, fast enough and limited. I have tested this on a modern desktop and it takes about 16 ms to search for a substring in 5000 records. If you try to use this for more than a few thousand records it is going to be more than a few milliseconds to search, but as this is only meant for client side JS I think you may have other problems
 
+## install
+
+```
+npm install --save minimal-text-search
+```
+
 ## Similarities to Lunr.js
 
 This is not meant to be a drop in replacement for Lunr.js, the only thing I have implement is a very simple substring search, but I have tried to emulate their interfaces where possible.
