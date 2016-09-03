@@ -1,6 +1,6 @@
 {
   "name": "minimal-text-search",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "This is a dependency free text substring search system that is meant to be small, fast enough and limited.",
   "main": "lib/index.js",
   "dependencies": {},
@@ -16,8 +16,8 @@
     "prepublish": "npm run compile",
     "test": "mocha test --compilers js:babel-core/register"
   },
-  "url" : "https://github.com/owner/project/issues",
-  "email" : "aaron@ard.ninja",
+  "url": "https://github.com/owner/project/issues",
+  "email": "aaron@ard.ninja",
   "author": "Aaron Decker (aaron@ard.ninja)",
   "license": "MIT"
 }
