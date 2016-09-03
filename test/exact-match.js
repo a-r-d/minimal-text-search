@@ -39,6 +39,7 @@ describe('MinimalTextSearch', function() {
 
     assert(results.length === 1, 'one result for frank');
     assert(results2.length === 0, 'zero results for case sensitive search');
+    assert(search.exactMatch('es').length === 2, 'two results for "es"');
   });
 
   it('exactMatch should not blow up falsey values', function() {

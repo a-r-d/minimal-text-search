@@ -1,7 +1,7 @@
 {
   "name": "minimal-text-search",
-  "version": "1.0.0",
-  "description": "This is a dependency free reverse index text search system that is meant to be small, fast and limited.",
+  "version": "1.0.1",
+  "description": "This is a dependency free text substring search system that is meant to be small, fast enough and limited.",
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
@@ -12,7 +12,8 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
     "test": "mocha test --compilers js:babel-core/register"
   },
   "author": "Aaron Decker (aaron@ard.ninja)",
