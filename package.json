@@ -1,6 +1,6 @@
 {
   "name": "minimal-text-search",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is a dependency free text substring search system that is meant to be small, fast enough and limited.",
   "main": "lib/index.js",
   "dependencies": {},
