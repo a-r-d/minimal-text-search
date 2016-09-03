@@ -16,8 +16,13 @@
     "prepublish": "npm run compile",
     "test": "mocha test --compilers js:babel-core/register"
   },
-  "url": "https://github.com/owner/project/issues",
-  "email": "aaron@ard.ninja",
-  "author": "Aaron Decker (aaron@ard.ninja)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-r-d/minimal-text-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a-r-d/minimal-text-search/issues"
+  },
+  "author": "Aaron Decker <aaron@ard.ninja> (http://ard.ninja)",
   "license": "MIT"
 }
