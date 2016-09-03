@@ -16,6 +16,8 @@
     "prepublish": "npm run compile",
     "test": "mocha test --compilers js:babel-core/register"
   },
+  "url" : "https://github.com/owner/project/issues",
+  "email" : "aaron@ard.ninja",
   "author": "Aaron Decker (aaron@ard.ninja)",
   "license": "MIT"
 }
