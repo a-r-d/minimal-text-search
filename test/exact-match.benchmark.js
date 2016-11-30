@@ -1,6 +1,5 @@
 import MinimalTextSearch from '../src/index';
 import faker from 'faker';
-import microtime from 'microtime';
 const assert = require('assert');
 
 const randSubStringOfLen = (str, len) => {
@@ -23,7 +22,7 @@ describe('MinimalTextSearch (Benchmark)', function() {
       this.ref('id');
     });
 
-    const start = microtime.now();
+    const start = Date.now();
     const len = 5000;
     let i = 1;
     const mkPerson = () => {
@@ -37,7 +36,7 @@ describe('MinimalTextSearch (Benchmark)', function() {
     for(let j = 0; j < len; j++) {
       search.add(mkPerson());
     }
-    console.info(`\t\tIt took ${microtime.now() - start} us to create the random data + indexes`);
+    console.info(`\t\tIt took ${Date.now() - start} ms to create the random data + indexes`);
 
     //console.log(search._store._index.lowercase);
     // find a random name
@@ -51,23 +50,23 @@ describe('MinimalTextSearch (Benchmark)', function() {
     let randmIpsum3 = search._store._index.cleanedDocuments[Math.floor((Math.random() * len))]._document.description;
     randmIpsum3 = randSubStringOfLen(randmIpsum2, 14);
 
-    const s1 = microtime.now();
+    const s1 = Date.now();
     const resultsName = search.exactMatch(nm);  // 1 results
-    const s2 = microtime.now();
+    const s2 = Date.now();
     const resultsNamePart = search.exactMatch(namePart);  // 0 results
-    const s3 = microtime.now();
+    const s3 = Date.now();
     const resIpsum1 = search.exactMatch(randmIpsum1);
-    const s4 = microtime.now();
+    const s4 = Date.now();
     const resIpsum2 = search.exactMatch(randmIpsum2);
-    const s5 = microtime.now();
+    const s5 = Date.now();
     const resIpsum3 = search.exactMatch(randmIpsum3);
-    const s6 = microtime.now();
+    const s6 = Date.now();
 
-    console.info(`\t\tSearch on ${len} documents (name lcase) for term ${nm} took ${s2 - s1} us`);
-    console.info(`\t\tSearch on ${len} documents (name lcase) for term ${namePart} took ${s3 - s2} us`);
-    console.info(`\t\tSearch on ${len} documents (description lcase) for term ${randmIpsum1} took ${s4 - s3} us`);
-    console.info(`\t\tSearch on ${len} documents (description lcase) for term ${randmIpsum2} took ${s5 - s4} us`);
-    console.info(`\t\tSearch on ${len} documents (description) for term ${randmIpsum3} took ${s6 - s5} us`);
+    console.info(`\t\tSearch on ${len} documents (name lcase) for term ${nm} took ${s2 - s1} ms`);
+    console.info(`\t\tSearch on ${len} documents (name lcase) for term ${namePart} took ${s3 - s2} ms`);
+    console.info(`\t\tSearch on ${len} documents (description lcase) for term ${randmIpsum1} took ${s4 - s3} ms`);
+    console.info(`\t\tSearch on ${len} documents (description lcase) for term ${randmIpsum2} took ${s5 - s4} ms`);
+    console.info(`\t\tSearch on ${len} documents (description) for term ${randmIpsum3} took ${s6 - s5} ms`);
 
     //console.log('results: ', resultsName, resultsNamePart, resIpsum1);
     assert(resultsName.length > 0, 'known existing term lc');

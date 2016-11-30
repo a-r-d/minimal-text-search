@@ -1,6 +1,5 @@
 import MinimalTextSearch from '../src/index';
 import faker from 'faker';
-import microtime from 'microtime';
 const assert = require('assert');
 
 const people1 = [{
