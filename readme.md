@@ -1,4 +1,7 @@
 # Minimal Text Search
+[![Build Status](https://travis-ci.org/a-r-d/minimal-text-search.svg?branch=master)](https://travis-ci.org/a-r-d/minimal-text-search) [![npm version](https://badge.fury.io/js/minimal-text-search.svg)](https://badge.fury.io/js/minimal-text-search) 
+
+[![NPM](https://nodei.co/npm/minimal-text-search.png)](https://nodei.co/npm/minimal-text-search/)
 
 This is a dependency free text substring search system that is meant to be small, fast enough and limited. I have tested this on a modern desktop and it takes about 16 ms to search for a substring in 5000 records. If you try to use this for more than a few thousand records it is going to be more than a few milliseconds to search, but as this is only meant for client side JS I think you may have other problems
 
