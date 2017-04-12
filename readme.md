@@ -1,5 +1,5 @@
 # Minimal Text Search
-[![Build Status](https://travis-ci.org/a-r-d/minimal-text-search.svg?branch=master)](https://travis-ci.org/a-r-d/minimal-text-search) [![npm version](https://badge.fury.io/js/minimal-text-search.svg)](https://badge.fury.io/js/minimal-text-search) 
+[![Build Status](https://travis-ci.org/a-r-d/minimal-text-search.svg?branch=master)](https://travis-ci.org/a-r-d/minimal-text-search) [![npm version](https://badge.fury.io/js/minimal-text-search.svg)](https://badge.fury.io/js/minimal-text-search) [![Code Climate](https://codeclimate.com/github/a-r-d/minimal-text-search/badges/gpa.svg)](https://codeclimate.com/github/a-r-d/minimal-text-search)
 
 [![NPM](https://nodei.co/npm/minimal-text-search.png)](https://nodei.co/npm/minimal-text-search/)
 
